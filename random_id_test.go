@@ -25,11 +25,11 @@ func TestNewBase(t *testing.T) {
 }
 
 func TestGenid(t *testing.T) {
-	fmt.Println(generateAccount(base))
+	fmt.Println(gen(base))
 }
 func TestMutiGenid(t *testing.T) {
 	for i := 0; i < 1000; i++ {
-		fmt.Println(i, generateAccount(base))
+		fmt.Println(i, gen(base))
 		time.Sleep(1 * time.Millisecond)
 	}
 }
