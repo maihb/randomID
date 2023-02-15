@@ -5,6 +5,7 @@ import (
 )
 
 func gen(base []byte) string {
+	lenght := uint64(len(base))
 	//变化小的放低位，变化大的放高位
 	var ms_2 uint64 = 100       //毫秒的十位数和个位数
 	var year uint64 = 50 * ms_2 //年
@@ -31,9 +32,9 @@ func gen(base []byte) string {
 		if total <= 0 {
 			break
 		}
-		i := total % 62
+		i := total % lenght
 		rid = append(rid, base[i])
-		total = (total - i) / 62
+		total = (total - i) / lenght
 	}
 	return string(rid)
 }
